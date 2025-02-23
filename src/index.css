@@ -1,0 +1,405 @@
+@import "tailwindcss";
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family:Futura ;
+  src: url(/src/assets/Fonts/Futura\ Bold\ font.ttf);
+}
+@font-face {
+  font-family:Inter ;
+  src: url(/src/assets/Fonts/inter.otf);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+
+}
+
+::selection{
+  background-color: #EDEDED;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: none;
+
+}
+
+.Header {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  padding: 0 2vw;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.icon {
+  height: 7vh;
+  width: 3  vw;
+  border-radius: 50%;
+  background-color: #D2D2D2;
+  overflow: hidden; /* ✅ Extra content hide karega */
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.Home {
+  width: 100%;
+  margin-top: 5vw;
+}
+
+.Landingpage {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 9vw ;
+}
+.landingpageup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  flex-direction: column;
+}
+
+.landingpageup h3 {
+  font-family: futura;
+  font-size: 1.4vw;
+  color:rgb(47, 46, 46);
+  text-transform: uppercase;
+  line-height: 1vw;
+}
+.landingpageup h6 {
+  font-family: actay;
+  font-size: 0.9vw;
+  line-height: 1vw;
+  color: #807d7d;
+  text-transform: uppercase ;
+}
+.Landingpagetop {
+  height: 16vh;
+  width: 100%;
+  padding: 0 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+
+.Landingpagetop h1{
+  font-family: futura;
+  font-size: 7.1vw;
+  margin: 0.3vw 0;
+  text-transform: uppercase;
+  color: #363636;
+}
+
+
+
+  .Landingpagebottom {
+    
+    height: 35vh;
+    width: 100%;
+    padding: 0 2vw;
+    margin-bottom: 1vw;
+    display: flex; /* ✅ Images ko side-by-side lane ke liye */
+    align-items: center;
+    justify-content: center;
+  
+    gap: 1vw; /* ✅ Images ke darmiyan gap */
+    position: relative; /* ✅ Parent ko relative banana zaroori hai */
+  }
+  .Landingpagebottom img { 
+    
+    height: 31vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2vw;
+    position: relative; /* ✅ Absolute hatao taake overlap na ho */
+  
+    /* ✅ Advanced 3D Shadow Effect */
+    box-shadow:  
+      5px 5px 10px rgba(0, 0, 0, 0.3),  /* Primary shadow */
+      10px 10px 20px rgba(0, 0, 0, 0.2), /* Secondary deeper shadow */
+      15px 15px 30px rgba(0, 0, 0, 0.1); /* Lightest outer shadow */
+  
+    /* ✅ Slight Rotation for 3D Look */
+    transform: rotateX(5deg) rotateY(5deg);
+    
+    /* ✅ Smooth transition effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* ✅ Hover Effect for More Depth */
+  .Landingpagebottom img:hover {
+    cursor: pointer;
+    transform: rotate(20deg) rotateX(20deg) scale(1.05);
+    box-shadow:  
+      8px 8px 15px rgba(0, 0, 0, 0.4),
+      12px 12px 25px rgba(0, 0, 0, 0.3),
+      18px 18px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+.Landingpageend{
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Landingpageend h2,h3{
+  font-family: futura;
+  font-size: 7vw;
+  line-height: 5.5vw;
+  margin: 0.3vw 0;
+  text-transform: uppercase;
+  color: #C0C0C0;
+  
+}
+
+
+.Featuredwork {
+  width: 100%;
+  margin-bottom: 8vw;
+
+}
+
+.Featuredworktop {
+  height: 21vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 3vw;
+}
+
+.Featuredworktop h1{
+  font-family: futura;
+  font-size: 6vw;
+  line-height: 6vw;
+  color:#363636;
+  text-transform: uppercase;
+
+  
+}
+
+.Featuredworktop h5{
+  font-family: Inter;
+  font-size: 1.5vw;
+  color: rgb(40, 39, 39);
+  
+}
+
+
+.Featuredbottom {
+  width: 100%;
+  
+
+}
+
+
+.swiper {
+    width:80%;
+  gap: 15vw;
+  overflow: hidden;
+
+
+
+}
+
+.slide {
+  width: 100%;
+  border-radius: 1vw;
+
+
+
+}
+
+.imagesection {
+  height: 79vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  overflow: hidden;
+    }
+.swiper-slide {
+  height: 90vh;
+  text-align: center;
+  margin-right: 10px; /* Adjust gap between slides */
+  
+}
+.imagesection img {
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+ object-position: center;
+ border-radius: 1vw;
+ 
+}
+.imagesection video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1vw;
+  
+ }
+.slide button {
+  margin: 1vw 0;
+  height: 7vh;
+  width: 12vw;
+  border-radius: 5vw;
+  background-color: #D2D2D2;
+  border: none;
+  font-family: futura;
+  text-transform: uppercase;
+  font-size: 1.1vw;
+  cursor: pointer;
+  color: #363636;
+
+}
+
+
+
+.morework {
+  width: 100%;
+  margin-top:12vw;
+ 
+}
+
+
+.moreworktop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5vw;
+}
+
+
+.moreworktop h1 {
+  font-family: futura;
+  font-size: 6vw;
+  color: #363636;
+  text-transform: uppercase;
+  line-height: 6vw;
+}
+
+.moreworktop h4 {
+  font-family: inter;
+  font-size: 1.5vw;
+  color: #363636;
+}
+.Morworkcars {
+  width: 100%;
+  padding: 0 2vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 1vw; /* Space between cards */
+}
+
+.morecards {
+  height: 49vh;
+  width: 69%;  /* 100% taake grid handle kare */
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 2vw;
+  margin: 3vw 0;
+}
+
+.morecards img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.Footer {
+  width: 100%;
+    background-color: #D2D2D2;
+  margin-top: 10vw;
+  overflow: hidden;
+  position: relative; /* ✅ Important for GSAP */
+  
+
+}
+
+
+.Footertop {
+  height: 69vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Footertop h1 {
+  font-family: futura;
+  text-transform: uppercase;
+  font-size: 30vw;
+  color: #FFFFFF;
+
+}
+
+.Footerbtm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Footerbtm h2 {
+  font-family: futura;
+  font-size: 1.2vw;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 3vw;
+}
+
+
+.Footerbtm h3 {
+  font-family: futura;
+  font-size: 3vw;
+  line-height: 0.1vw;
+  color: #363636;
+  text-transform: uppercase;
+  margin-bottom: 2vw;
+
+}
+
+.Footerbtm h6 {
+  font-family: inter;
+  font-size: 1vw;
+  color: #363636;
+}
