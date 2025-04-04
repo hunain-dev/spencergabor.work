@@ -1,55 +1,108 @@
 @import "tailwindcss";
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
 @font-face {
-  font-family:Futura ;
+  font-family: Futura;
   src: url(/src/assets/Fonts/Futura\ Bold\ font.ttf);
 }
 @font-face {
-  font-family:Inter ;
+  font-family: Inter;
   src: url(/src/assets/Fonts/inter.otf);
 }
-
-html, body {
-  height: 100%;
-  width: 100%;
-  background-color: #FFFFFF;
-
+@font-face {
+  font-family: cursor;
+  src: url(/src/assets/Fonts/cursor.ttf);
 }
 
-::selection{
-  background-color: #EDEDED;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
 }
 
 ::-webkit-scrollbar {
   width: 0px;
   background: none;
+}
+
+.loader {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2; 
+  background: url('https://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.loader h1 {
+  font-size: 12vw;
+  text-transform: uppercase;
+  font-family: Futura, sans-serif;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  z-index: 999;
+  color: #f3eeee;
+
 
 }
+
+.loader .images {
+  height: 30vh;
+  width: 60%; /* You can adjust the width as per your requirement */
+  overflow: hidden;
+  border-radius: 2vw;
+  position: absolute;
+  z-index: 999;
+  margin-top: 2vw;
+  display: flex;
+  gap: 20px; /* Adjust space between images */
+}
+
+.loader .images img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%; /* Ensures images scale to fill container */
+  height: 100%;
+  border-radius: 10px; /* Optional: for rounded corners */
+}
+
+
 
 .Header {
   height: 10vh;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: right; 
-  padding: 0 2vw;
-  position: fixed; 
+  justify-content: space-between;
+  padding: 0 1vw;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 2;
 }
 .icon {
   height: 7vh;
-  width: 3  vw;
+  width: 3vw;
   border-radius: 50%;
-  background-color: #D2D2D2;
+  background-color: #d2d2d2;
   overflow: hidden; /* ✅ Extra content hide karega */
 }
 
@@ -60,17 +113,32 @@ html, body {
   object-position: center;
 }
 
+.left {
+  height: 100%;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  font-family: cursor;
+  font-size: 1.3vw;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: actay;
+}
+
 
 .Home {
   width: 100%;
   margin-top: 5vw;
+  z-index: 99;
 }
 
 .Landingpage {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  margin-bottom: 9vw ;
+  margin-bottom: 9vw;
 }
 .landingpageup {
   width: 100%;
@@ -79,12 +147,13 @@ html, body {
   justify-content: center;
   gap: 1vw;
   flex-direction: column;
+  background-color: auto;
 }
 
 .landingpageup h3 {
   font-family: futura;
   font-size: 1.4vw;
-  color:rgb(47, 46, 46);
+  color: rgb(47, 46, 46);
   text-transform: uppercase;
   line-height: 1vw;
 }
@@ -93,7 +162,7 @@ html, body {
   font-size: 0.9vw;
   line-height: 1vw;
   color: #807d7d;
-  text-transform: uppercase ;
+  text-transform: uppercase;
 }
 .Landingpagetop {
   height: 16vh;
@@ -102,10 +171,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  }
-
-.Landingpagetop h1{
+.Landingpagetop h1 {
   font-family: futura;
   font-size: 7.1vw;
   margin: 0.3vw 0;
@@ -113,54 +181,46 @@ html, body {
   color: #363636;
 }
 
+.Landingpagebottom {
+  height: 35vh;
+  width: 100%;
+  padding: 0 2vw;
+  margin-bottom: 1vw;
+  display: flex; /* ✅ Images ko side-by-side lane ke liye */
+  align-items: center;
+  justify-content: center;
 
+  gap: 1vw; /* ✅ Images ke darmiyan gap */
+  position: relative; /* ✅ Parent ko relative banana zaroori hai */
+}
+.Landingpagebottom img {
+  height: 31vh;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2vw;
+  position: relative; /* ✅ Absolute hatao taake overlap na ho */
 
-  .Landingpagebottom {
-    
-    height: 35vh;
-    width: 100%;
-    padding: 0 2vw;
-    margin-bottom: 1vw;
-    display: flex; /* ✅ Images ko side-by-side lane ke liye */
-    align-items: center;
-    justify-content: center;
-  
-    gap: 1vw; /* ✅ Images ke darmiyan gap */
-    position: relative; /* ✅ Parent ko relative banana zaroori hai */
-  }
-  .Landingpagebottom img { 
-    
-    height: 31vh;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 2vw;
-    position: relative; /* ✅ Absolute hatao taake overlap na ho */
-  
-    /* ✅ Advanced 3D Shadow Effect */
-    box-shadow:  
-      5px 5px 10px rgba(0, 0, 0, 0.3),  /* Primary shadow */
-      10px 10px 20px rgba(0, 0, 0, 0.2), /* Secondary deeper shadow */
-      15px 15px 30px rgba(0, 0, 0, 0.1); /* Lightest outer shadow */
-  
-    /* ✅ Slight Rotation for 3D Look */
-    transform: rotateX(5deg) rotateY(5deg);
-    
-    /* ✅ Smooth transition effect */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  /* ✅ Hover Effect for More Depth */
-  .Landingpagebottom img:hover {
-    cursor: pointer;
-    transform: rotate(20deg) rotateX(20deg) scale(1.05);
-    box-shadow:  
-      8px 8px 15px rgba(0, 0, 0, 0.4),
-      12px 12px 25px rgba(0, 0, 0, 0.3),
-      18px 18px 35px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-.Landingpageend{
+  /* ✅ Advanced 3D Shadow Effect */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
+    /* Primary shadow */ 10px 10px 20px rgba(0, 0, 0, 0.2),
+    /* Secondary deeper shadow */ 15px 15px 30px rgba(0, 0, 0, 0.1); /* Lightest outer shadow */
+
+  /* ✅ Slight Rotation for 3D Look */
+  transform: rotateX(5deg) rotateY(5deg);
+
+  /* ✅ Smooth transition effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ✅ Hover Effect for More Depth */
+.Landingpagebottom img:hover {
+  cursor: pointer;
+  transform: rotate(20deg) rotateX(20deg) scale(1.05);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4), 12px 12px 25px rgba(0, 0, 0, 0.3),
+    18px 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+.Landingpageend {
   height: 35vh;
   width: 100%;
   display: flex;
@@ -169,21 +229,26 @@ html, body {
   flex-direction: column;
 }
 
-.Landingpageend h2,h3{
+.Landingpageend h2 {
   font-family: futura;
   font-size: 7vw;
   line-height: 5.5vw;
   margin: 0.3vw 0;
   text-transform: uppercase;
-  color: #C0C0C0;
-  
+  color: #c0c0c0;
 }
-
+.Landingpageend h3 {
+  font-family: futura;
+  font-size: 7vw;
+  line-height: 5.5vw;
+  margin: 0.3vw 0;
+  text-transform: uppercase;
+  color: #c0c0c0;
+}
 
 .Featuredwork {
   width: 100%;
   margin-bottom: 8vw;
-
 }
 
 .Featuredworktop {
@@ -196,70 +261,58 @@ html, body {
   margin-bottom: 3vw;
 }
 
-.Featuredworktop h1{
+.Featuredworktop h1 {
   font-family: futura;
-  font-size: 6vw;
-  line-height: 6vw;
-  color:#363636;
+  font-size: 5vw;
+  line-height: 5.5vw;
+  color: #363636;
   text-transform: uppercase;
-
-  
 }
 
-.Featuredworktop h5{
+.Featuredworktop h5 {
   font-family: Inter;
-  font-size: 1.5vw;
+  font-size: 1.1vw;
   color: rgb(40, 39, 39);
-  
 }
-
 
 .Featuredbottom {
   width: 100%;
-  
-
+  position: relative;
 }
 
-
 .swiper {
-    width:80%;
+  width: 93%;
   gap: 15vw;
   overflow: hidden;
-
-
-
 }
 
 .slide {
   width: 100%;
   border-radius: 1vw;
-
-
+  cursor: pointer;
 
 }
 
 .imagesection {
-  height: 79vh;
+  height: 75vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1vw;
   overflow: hidden;
-    }
+}
 .swiper-slide {
   height: 90vh;
   text-align: center;
-  margin-right: 10px; /* Adjust gap between slides */
-  
+  margin-right: 10px; 
 }
 .imagesection img {
- height: 100%;
- width: 100%;
- object-fit: cover;
- object-position: center;
- border-radius: 1vw;
- 
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1vw;
 }
 .imagesection video {
   height: 100%;
@@ -267,31 +320,69 @@ html, body {
   object-fit: cover;
   object-position: center;
   border-radius: 1vw;
-  
- }
+}
 .slide button {
   margin: 1vw 0;
   height: 7vh;
   width: 12vw;
   border-radius: 5vw;
-  background-color: #D2D2D2;
+  background-color: #d2d2d2;
   border: none;
   font-family: futura;
   text-transform: uppercase;
   font-size: 1.1vw;
   cursor: pointer;
   color: #363636;
-
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
 
+.popup-content {
+  width: 50vw;
+  max-width: 600px;
+  background: white;
+  padding: 40px;
+  border-radius: 2vw;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+}
+
+.popup-content img,
+.popup-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 1vw;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
 
 .morework {
   width: 100%;
-  margin-top:12vw;
- 
+  margin-top: 12vw;
 }
-
 
 .moreworktop {
   width: 100%;
@@ -301,7 +392,6 @@ html, body {
   flex-direction: column;
   margin-bottom: 5vw;
 }
-
 
 .moreworktop h1 {
   font-family: futura;
@@ -317,16 +407,18 @@ html, body {
   color: #363636;
 }
 .Morworkcars {
-  width: 100%;
-  padding: 0 2vw;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 1vw;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1vw; /* Space between cards */
 }
 
 .morecards {
-  height: 49vh;
-  width: 69%;  /* 100% taake grid handle kare */
+
+  height: 41vh;
+  width: 65%; /* 100% taake grid handle kare */
   background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   border-radius: 2vw;
@@ -338,19 +430,80 @@ html, body {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  cursor: pointer;
+
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  height: 95vh;
+  width: 90%;
+  display: flex;
+  padding: 1vw 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  text-align: center;
+  background-color: whitesmoke;
+  
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.image-gallery {
+  height: 75vh;
+  width: 43%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-gallery img {
+  height: 100%;
+  width: 100%;
+    object-position: center;
+    border-radius: 1vw;
+
+  object-fit: cover;
+}
+
+.close-button {
+  position: absolute;
+  top: 4vh;
+  right: 6vw;
+  background-color: rgb(225, 223, 220);
+  border-radius: 4vw;
+  color: rgb(42, 41, 41);
+  cursor: pointer;
+  padding: 1.3vw 1.3vw;
+  font-size: 1vw;
+}
 
 .Footer {
   width: 100%;
-    background-color: #D2D2D2;
+  background-color: #d2d2d2;
   margin-top: 10vw;
   overflow: hidden;
   position: relative; /* ✅ Important for GSAP */
-  
-
 }
-
 
 .Footertop {
   height: 69vh;
@@ -358,14 +511,16 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2vw;
+  margin: 0 auto;
 }
 
 .Footertop h1 {
+  object-fit: cover;
   font-family: futura;
   text-transform: uppercase;
   font-size: 30vw;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 .Footerbtm {
@@ -384,17 +539,16 @@ html, body {
   font-size: 1.2vw;
   color: white;
   text-transform: uppercase;
-  margin-bottom: 3vw;
+  margin-bottom: 2.3vw;
 }
-
 
 .Footerbtm h3 {
   font-family: futura;
-  font-size: 3vw;
+  font-size: 1.7vw;
   line-height: 0.1vw;
   color: #363636;
   text-transform: uppercase;
-  margin-bottom: 2vw;
+  margin-bottom: 1.4vw;
 
 }
 
@@ -403,3 +557,229 @@ html, body {
   font-size: 1vw;
   color: #363636;
 }
+
+.Aboutus {
+  width: 100%;
+  margin-top: 10vw;
+}
+
+.Aboutlanding {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+}
+.Aboutlanding h1 {
+  font-family: futura;
+  text-transform: uppercase;
+  font-size: 5vw;
+  color: #363636;
+}
+
+.Aboutlandingbottom {
+  width: 74%;
+}
+
+.Aboutlandingbottom h2 {
+  font-family: futura;
+  font-size: 5vw;
+  line-height: 4vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #cdcdcd;
+  margin: 3vw;
+  transition: all 1s;
+}
+
+.News {
+  width: 100%;
+  margin-top: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.News h1 {
+  font-family: futura;
+  font-size: 6vw;
+  color: #363636;
+  text-transform: uppercase;
+  margin: 2vw;
+}
+
+.Newscardcover {
+  width: 70%;
+  gap: 1vw;
+  padding: 0 2vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 1vw; 
+    padding: 1vw 1vw;
+  overflow: hidden;
+}
+
+
+.newscard{
+  height: 27vh;
+  border-radius: 2vw;
+  padding: 1.3vw 1vw;
+  display: flex;
+  align-items: center;
+gap: 1vw;
+  
+}
+.cardimg{
+  height: 23vh;
+  width: 29%;
+  border-radius: 20px;
+overflow: hidden;
+
+
+}
+.cardimg img{ 
+  width: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.newscard .carddesc{
+  height: 100%;
+  width: 69%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.2vw;
+
+  
+}
+.newscard .carddesc h4{ 
+ font-family: futura;
+ font-weight: 500;
+ font-size: 2.4vw;
+ text-transform: uppercase;
+ color: whitesmoke;
+
+  
+}
+.Porject {
+  width: 100%;
+  margin-top: 7vw;
+}
+
+.Porject h1 {
+  font-family: futura;
+  font-size: 4vw;
+  text-transform: uppercase;
+  color: #363636;
+  text-align: center;
+}
+.Seeproject {
+  margin: 0 auto;
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  gap: 0.8vw;
+  overflow: hidden;
+}
+
+.Seeproject .seeprojectleft {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Seeproject .seeprojectleft img {
+  height: 19vh;
+   object-fit: cover;
+  object-position: center;
+  border-radius: 1vw;
+  opacity: 0;
+  transition: all  1s;
+
+}
+.Seeproject .seeprojectleft img.active {
+  opacity: 1;
+}
+
+.Seeproject .seeprojectcenter {
+  height: 100%;
+  width: 51%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    gap: 2vw;
+  }
+  .Seeproject .seeprojectcenter h5 {
+font-family: futura;
+text-transform: uppercase;
+font-size: 7.2vw;
+color: #c4c0c0;
+line-height:11vh;
+transition: all  0.6s;
+}
+
+.Seeproject .seeprojectcenter h5:hover   {
+  font-family: futura;
+  text-transform: uppercase;
+  font-size: 7.2vw;
+  color: #363636;
+  line-height:17vh;
+  }
+.Seeproject .seeprojectright {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Seeproject .seeprojectright img {
+  height: 19vh;
+   object-fit: cover;
+  object-position: center;
+  border-radius: 1vw;
+  opacity: 0;
+  transition: all  1s;
+
+}
+.Seeproject .seeprojectright img.active {
+  opacity: 1;
+}
+
+
+#modal-content h2{
+  font-family: futura;
+  font-size: 3vw;
+  font-weight: 500;
+  color: #363636;
+  text-transform: uppercase;
+}
+
+
+#modal-content p{
+  font-family: actay;
+  font-size: 1.2vw;
+  font-weight: 500;
+  margin-bottom: 1vw;
+  color: #363636;
+  padding: 0  10vw;
+}
+
+
+
+
+
+
+
