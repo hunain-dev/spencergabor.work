@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="main">
-      {/* {isLoading && <Loader setIsLoading={setIsLoading} />} */}
+      {isLoading && <Loader setIsLoading={setIsLoading} />}
       
       <Routes>
         <Route path="/" element={<Home />} />
